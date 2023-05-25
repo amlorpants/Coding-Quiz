@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* Body styles */
 body {
   font-family: Arial, sans-serif;

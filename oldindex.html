@@ -9,11 +9,11 @@
 
 <body>
     <!--main outer container-->
-    <div id="root" class="outer-container">
+    <div class="outer-container">
 
         <!-- top-bar section-->
-        <section id="top-bar-section" class="top-bar hidden">
-            <button id="highscores-btn">View Highscores</button>
+        <section class="top-bar">
+            <button>View Highscores</button>
             <p>Timer: 00:00</p>
         </section>
 
@@ -21,7 +21,7 @@
         <section class="inner-container">
 
             <!--quiz intro-->
-            <header id="quiz-header" class="quiz-intro">
+            <header class="quiz-intro">
                 <h1>Welcome to Coding 101</h1>
                 <p>Click "START" to begin!</p>
                 <button id="start-btn">START</button>
@@ -29,11 +29,15 @@
             <!--main quiz content-->
             <main>
                 <section class="question-section">
-                    <h2 id="question-div"></h2>
-                    <ul id="answer-list">
+                    <h2 id="question-div">Question Here</h2>
+                    <ul>
+                        <li><button id="choice0-btn">Answer 1</button></li>
+                        <li><button id="choice1-btn">Answer 2</button></li>
+                        <li><button id="choice2-btn">Answer 3</button></li>
+                        <li><button id="choice3-btn">Answer 4</button></li>
                     </ul>
                 </section>
-                <section id='quiz-end-section' class="quiz-end hidden">
+                <section class="quiz-end">
                     <h2>Quiz Finished!</h2>
                     <p>Your Score: 00</p>
                     <div>
