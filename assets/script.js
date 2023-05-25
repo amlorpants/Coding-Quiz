@@ -6,6 +6,9 @@ var quizHeaderEl = $('#quiz-header');
 var topBarSectionEl = $('#top-bar-section');
 var highscoresButtonEl = $('#highscores-btn');
 var quizEndEl = $('#quiz-end-section');
+var answerChoiceEl = $('answerChoice');
+var time = 60 * 100;
+var timerEl = $('#timer');
 
 const questions = [
   {
@@ -58,10 +61,13 @@ function renderAnswers(answers) {
   answerListEl.empty();
 
   $.each(answers, function (index, answer) {
-    var $li = $('<li></li>');
-    var $button = $('<button></button>').text(answer);
-    $li.append($button);
-    answerListEl.append($li);
+    var li = $('<li></li>');
+    var button = $('<button></button>').text(answer);
+    li.append(button);
+    li.attr('id', 'answerChoice' + index);
+    li.attr('class', 'answerChoice');
+
+    answerListEl.append(li);
   });
 }
 
@@ -82,8 +88,38 @@ startButtonEl.on('click', function () {
   hideElement(quizHeaderEl);
   hideElement(quizEndEl);
   showHiddenElement(topBarSectionEl);
-  questionEl.text(questions[0].question);
-  renderAnswers(questions[0].answers);
+  renderQuestionAndAnswers(questions[0]);
+  timerEl.text(time / 100);
 });
+
+// make the quiz-end-section show
+function onQuestionsEnd() {
+  console.log('end of questions');
+}
+
+// on click - answers show right or wrong answer chosen THEN move onto next question
+var currentQuestionNumber = 1;
+answerListEl.on('click', function () {
+  var isLastQuestion = questions.length <= currentQuestionNumber;
+
+  if (isLastQuestion) {
+    onQuestionsEnd();
+    return;
+  }
+  // if wrong answer chosen, time on clock goes down
+
+  renderQuestionAndAnswers(questions[currentQuestionNumber]);
+  currentQuestionNumber++;
+});
+
+// make a function that renders the question and answers list with a question object as a prop
+function renderQuestionAndAnswers(question) {
+  questionEl.text(question.question);
+  renderAnswers(question.answers);
+}
+
+// function that starts the timer
+
+// function that subtracts from timer on wrong answers
 
 onStart();
