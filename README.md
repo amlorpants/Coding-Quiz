@@ -15,3 +15,4 @@ URL:https://amlorpants.github.io/Coding-Quiz/
 Amy Taylor
 
 ## Visual
+![Screenshot 2023-05-26 at 16-37-01 Screenshot](https://github.com/amlorpants/Coding-Quiz/assets/87711695/d5cbd6b5-a106-4796-bca0-047baca80cce)
