@@ -31,18 +31,21 @@
             </header>
             <!--main quiz content-->
             <main>
-                <section class="question-section">
+                <section id="quiz-section" class="question-section">
                     <h2 id="question-div"></h2>
                     <ul id="answer-list">
                     </ul>
                 </section>
                 <section id='quiz-end-section' class="quiz-end hidden">
                     <h2>Quiz Finished!</h2>
-                    <p>Your Score: 00</p>
+                    <div id="final-score-container" class="hidden">
+                        <p>Your Score: </p>
+                        <p id="final-score"></p>
+                    </div>
                     <div>
                         <label for="" .>Enter Initials:</label>
                         <input type="text">
-                        <button>Submit</button>
+                        <button id="submit-score">Submit</button>
                     </div>
                 </section>
             </main>
